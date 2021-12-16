@@ -89,7 +89,6 @@ def create_dataset(CLASSES_LIST):
     Returns:
         features:          A list containing the extracted frames of the videos.
         labels:            A list containing the indexes of the classes associated with the videos.
-        video_files_paths: A list containing the paths of the videos in the disk.
     '''
 
     # Declared Empty Lists to store the features and labels.
