@@ -218,7 +218,7 @@ def train_model(device,model, dataloaders, criterion, optimizer, num_epochs=25, 
 
 
 
-def PredTopKClass(k,clips,model,device):
+def PredTopKClass(k,clips,CLASSES_LIST,model,device):
   with torch.no_grad(): # we do not want to backprop any gradients
 
       input_frames = np.array(clips)
@@ -248,7 +248,7 @@ def PredTopKClass(k,clips,model,device):
   return Classes_nameTop_k[0]     #list(zip(Classes_nameTop_k,ProbTop_k))
 
 
-def PredTopKProb(k,clips,model,device):
+def PredTopKProb(k,clips,CLASSES_LIST,model,device):
   with torch.no_grad(): # we do not want to backprop any gradients
 
       input_frames = np.array(clips)
