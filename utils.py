@@ -83,7 +83,7 @@ def frames_extraction(video_path,SEQUENCE_LENGTH):
     return frames_list
 
 
-def create_dataset(CLASSES_LIST):
+def create_dataset(DATASET_DIR,CLASSES_LIST,SEQUENCE_LENGTH):
     '''
     This function will extract the data of the selected classes and create the required dataset.
     Returns:
