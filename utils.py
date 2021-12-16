@@ -83,6 +83,59 @@ def frames_extraction(video_path,SEQUENCE_LENGTH):
     return frames_list
 
 
+def create_dataset():
+    '''
+    This function will extract the data of the selected classes and create the required dataset.
+    Returns:
+        features:          A list containing the extracted frames of the videos.
+        labels:            A list containing the indexes of the classes associated with the videos.
+        video_files_paths: A list containing the paths of the videos in the disk.
+    '''
+
+    # Declared Empty Lists to store the features and labels.
+    features = []
+    labels = []
+    
+    # Iterating through all the classes mentioned in the classes list
+    for class_index, class_name in enumerate(CLASSES_LIST):
+        
+        # Display the name of the class whose data is being extracted.
+        print(f'Extracting Data of Class: {class_name}')
+        
+        # Get the list of video files present in the specific class name directory.
+        files_list = os.listdir(os.path.join(DATASET_DIR, class_name))
+        
+        # Iterate through all the files present in the files list.
+        for file_name in files_list:
+            
+            # Get the complete video path.
+            video_file_path = os.path.join(DATASET_DIR, class_name, file_name)
+
+            # Extract the frames of the video file.
+            frames = frames_extraction(video_file_path,SEQUENCE_LENGTH)
+
+            # Check if the extracted frames are equal to the SEQUENCE_LENGTH specified above.
+            # So ignore the vides having frames less than the SEQUENCE_LENGTH.
+            if len(frames) == SEQUENCE_LENGTH:
+                # Append the data to their repective lists.
+                input_frames = np.array(frames)
+                
+                # transpose to get [3, num_clips, height, width]
+                input_frames = np.transpose(input_frames, (3,0, 1, 2))
+
+                # convert the Frames & Labels to tensor
+                input_frames = torch.tensor(input_frames, dtype=torch.float32)
+                label = torch.tensor(int(class_index))
+
+                # Append the data to their repective lists and Stack them as Tensor.
+                features.append(input_frames) # append to list
+                labels.append(label) # append to list
+               
+
+              
+    # Return the frames, class index, and video file path.
+    return  torch.stack(features), torch.stack(labels)
+
 # Function To Train the Model From Pytorch Documentation
 def train_model(model, dataloaders, criterion, optimizer, num_epochs=25, is_inception=False):
     since = time.time()
