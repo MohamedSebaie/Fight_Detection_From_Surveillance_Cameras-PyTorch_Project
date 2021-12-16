@@ -218,7 +218,7 @@ def train_model(device,model, dataloaders, criterion, optimizer, num_epochs=25, 
 
 
 
-def PredTopKClass(k,clips,CLASSES_LIST,model,device):
+def PredTopKClass(k, clips, CLASSES_LIST, model, device):
   with torch.no_grad(): # we do not want to backprop any gradients
 
       input_frames = np.array(clips)
@@ -299,7 +299,7 @@ def show_video(file_name, width=640):
 
 
 
-def predict_on_video(video_file_path, output_file_path, SEQUENCE_LENGTH=64):
+def predict_on_video(video_file_path, output_file_path, CLASSES_LIST, model, device, SEQUENCE_LENGTH=64):
     '''
     This function will perform action recognition on a video using the LRCN model.
     Args:
@@ -344,7 +344,7 @@ def predict_on_video(video_file_path, output_file_path, SEQUENCE_LENGTH=64):
 
         # Check if the number of frames in the queue are equal to the fixed sequence length.
         if len(frames_queue) == SEQUENCE_LENGTH:
-          predicted_class_name= PredTopKClass(1,frames_queue,model_ft)
+          predicted_class_name= PredTopKClass(1,CLASSES_LIST,model,device)
     
         # Write predicted class name on top of the frame.
         if predicted_class_name=="fight":
