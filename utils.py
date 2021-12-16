@@ -344,7 +344,7 @@ def predict_on_video(video_file_path, output_file_path, CLASSES_LIST, model, dev
 
         # Check if the number of frames in the queue are equal to the fixed sequence length.
         if len(frames_queue) == SEQUENCE_LENGTH:
-          predicted_class_name= PredTopKClass(1,CLASSES_LIST,model,device)
+          predicted_class_name= PredTopKClass(1,frames_queue, CLASSES_LIST, model, device)
     
         # Write predicted class name on top of the frame.
         if predicted_class_name=="fight":
