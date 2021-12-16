@@ -136,7 +136,7 @@ def create_dataset(DATASET_DIR,CLASSES_LIST,SEQUENCE_LENGTH):
     return  torch.stack(features), torch.stack(labels)
 
 # Function To Train the Model From Pytorch Documentation
-def train_model(model, dataloaders, criterion, optimizer, num_epochs=25, is_inception=False):
+def train_model(device,model, dataloaders, criterion, optimizer, num_epochs=25, is_inception=False):
     since = time.time()
 
     val_acc_history = []
