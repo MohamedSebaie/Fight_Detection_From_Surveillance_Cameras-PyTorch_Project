@@ -299,7 +299,7 @@ def show_video(file_name, width=640):
 
 
 
-def predict_on_video(video_file_path, output_file_path, CLASSES_LIST, model, device, SEQUENCE_LENGTH=64):
+def predict_on_video(video_file_path, output_file_path, CLASSES_LIST, model, device, SEQUENCE_LENGTH,skip=2):
     '''
     This function will perform action recognition on a video using the LRCN model.
     Args:
@@ -326,6 +326,7 @@ def predict_on_video(video_file_path, output_file_path, CLASSES_LIST, model, dev
     predicted_class_name = ''
 
     # Iterate until the video is accessed successfully.
+    counter=0
     while video_reader.isOpened():
 
         # Read the frame.
@@ -338,23 +339,97 @@ def predict_on_video(video_file_path, output_file_path, CLASSES_LIST, model, dev
         image = frame.copy()
         framee = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         framee = transform(image=framee)['image']
+        if counter % skip==0:
+          # Appending the pre-processed frame into the frames list.
+          frames_queue.append(framee)
+         
         
-        # Appending the pre-processed frame into the frames list.
-        frames_queue.append(framee)
-
         # Check if the number of frames in the queue are equal to the fixed sequence length.
         if len(frames_queue) == SEQUENCE_LENGTH:
           predicted_class_name= PredTopKClass(1,frames_queue, CLASSES_LIST, model, device)
+          print(predicted_class_name)
+          frames_queue = deque(maxlen = SEQUENCE_LENGTH)
     
         # Write predicted class name on top of the frame.
         if predicted_class_name=="fight":
           cv2.putText(frame, predicted_class_name, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
         else:
           cv2.putText(frame, predicted_class_name, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
-
-        # Write The frame into the disk using the VideoWriter Object.
-        video_writer.write(frame)
+        counter+=1
         
+        # Write The frame into the disk using the VideoWriter Object.
+
+        video_writer.write(frame)
+        # time.sleep(2)
+    print(counter)  
     # Release the VideoCapture and VideoWriter objects.
     video_reader.release()
     video_writer.release()
+
+def showIference(refNumber,CLASSES_LIST, model, device,sequence,skip,inName='out',outName="inferOut"):
+    # Construct the output video path.
+    output_video_file_path ='/content/'+outName+"_"+str(refNumber)+"_"+str(sequence)+'.mp4'
+    input_video_file_path  ='/content/'+inName+str(refNumber)+'.mp4'
+    # Perform Accident Detection on the Test Video.
+    predict_on_video(input_video_file_path, output_video_file_path, CLASSES_LIST, model, device,sequence,skip)
+    return output_video_file_path
+
+
+# def predict_on_video(video_file_path, output_file_path, CLASSES_LIST, model, device,T=0.25, SEQUENCE_LENGTH=64):
+#     '''
+#     This function will perform action recognition on a video using the LRCN model.
+#     Args:
+#     video_file_path:  The path of the video stored in the disk on which the action recognition is to be performed.
+#     output_file_path: The path where the ouput video with the predicted action being performed overlayed will be stored.
+#     SEQUENCE_LENGTH:  The fixed number of frames of a video that can be passed to the model as one sequence.
+#     '''
+
+#     # Initialize the VideoCapture object to read from the video file.
+#     video_reader = cv2.VideoCapture(video_file_path)
+
+#     # Get the width and height of the video.
+#     original_video_width = int(video_reader.get(cv2.CAP_PROP_FRAME_WIDTH))
+#     original_video_height = int(video_reader.get(cv2.CAP_PROP_FRAME_HEIGHT))
+
+#     # Initialize the VideoWriter Object to store the output video in the disk.
+#     video_writer = cv2.VideoWriter(output_file_path, cv2.VideoWriter_fourcc('M', 'P', '4', 'V'), 
+#                                    video_reader.get(cv2.CAP_PROP_FPS), (original_video_width, original_video_height))
+
+#     # Declare a queue to store video frames.
+#     frames_queue = deque(maxlen = SEQUENCE_LENGTH)
+#     transform= transform_()
+#     predicted_class_name=''
+#     start_time_=time.time()
+#     # Iterate until the video is accessed successfully.
+#     while video_reader.isOpened():
+        
+#         # Read the frame.
+#         ok, frame = video_reader.read() 
+        
+#         # Check if frame is not read properly then break the loop.
+#         if not ok:
+#             break
+#         if time.time() >= start_time_+T:
+#             image = frame.copy()
+#             framee = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+#             framee = transform(image=framee)['image']
+            
+#             # Appending the pre-processed frame into the frames list.
+#             frames_queue.append(framee)
+            
+#         # Check if the number of frames in the queue are equal to the fixed sequence length.
+#         if len(frames_queue) == SEQUENCE_LENGTH:
+#           predicted_class_name= PredTopKClass(1,frames_queue, CLASSES_LIST, model, device)
+          
+#         # Write predicted class name on top of the frame.
+#         if predicted_class_name=="fight":
+#           cv2.putText(frame, predicted_class_name, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+#         else:
+#           cv2.putText(frame, predicted_class_name, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+            
+#         # Write The frame into the disk using the VideoWriter Object.
+#         video_writer.write(frame)
+        
+#     # Release the VideoCapture and VideoWriter objects.
+#     video_reader.release()
+#     video_writer.release()
