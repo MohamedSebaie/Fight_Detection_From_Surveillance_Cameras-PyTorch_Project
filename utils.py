@@ -295,6 +295,20 @@ def show_video(file_name, width=640):
   </video>
   """.format(width, data_url))
 
+def FightInference(video_path,CLASSES_LIST, model,device,SEQUENCE_LENGTH=64):
+  clips = frames_extraction(video_path,SEQUENCE_LENGTH)
+  print(PredTopKClass(1,clips, CLASSES_LIST, model, device))
+  print(PredTopKProb(2,clips, CLASSES_LIST, model, device))
+  return "***********"
+
+
+def FightInference_Time(video_path,CLASSES_LIST, model,device,SEQUENCE_LENGTH=64):
+  start_time = time.time()
+  clips = frames_extraction(video_path,SEQUENCE_LENGTH)
+  class_=PredTopKClass(1,clips,CLASSES_LIST,model,device)
+  elapsed = time.time() - start_time
+  print("time is:",elapsed)
+  return class_
 
 
 
