@@ -380,10 +380,7 @@ def predict_on_video(video_file_path, output_file_path, CLASSES_LIST, model, dev
     video_reader.release()
     video_writer.release()
 
-def showIference(refNumber,CLASSES_LIST, model, device,sequence,skip,inName='out',outName="inferOut"):
-    # Construct the output video path.
-    output_video_file_path ='/content/'+outName+"_"+str(refNumber)+"_"+str(sequence)+'.mp4'
-    input_video_file_path  ='/content/'+inName+str(refNumber)+'.mp4'
+def showIference(CLASSES_LIST, model, device,sequence,skip,input_video_file_path,output_video_file_path):
     # Perform Accident Detection on the Test Video.
     predict_on_video(input_video_file_path, output_video_file_path, CLASSES_LIST, model, device,sequence,skip)
     return output_video_file_path
