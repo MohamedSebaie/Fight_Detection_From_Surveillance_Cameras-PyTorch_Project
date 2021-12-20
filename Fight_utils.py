@@ -329,7 +329,7 @@ def FightInference_Time(video_path,model,SEQUENCE_LENGTH=64):
 
 
 
-def predict_on_video(video_file_path, output_file_path, model, SEQUENCE_LENGTH,skip=2,show=False):
+def predict_on_video(video_file_path, output_file_path, model, SEQUENCE_LENGTH,skip=2,showInfo=False):
     '''
     This function will perform action recognition on a video using the LRCN model.
     Args:
@@ -377,7 +377,7 @@ def predict_on_video(video_file_path, output_file_path, model, SEQUENCE_LENGTH,s
         # Check if the number of frames in the queue are equal to the fixed sequence length.
         if len(frames_queue) == SEQUENCE_LENGTH:
           predicted_class_name= PredTopKClass(1,frames_queue, model)
-          if show:
+          if showInfo:
             print(predicted_class_name)
             frames_queue = deque(maxlen = SEQUENCE_LENGTH)
           else:
@@ -394,21 +394,21 @@ def predict_on_video(video_file_path, output_file_path, model, SEQUENCE_LENGTH,s
 
         video_writer.write(frame)
         # time.sleep(2)
-    if show:
+    if showInfo:
       print(counter)  
     # Release the VideoCapture and VideoWriter objects.
     video_reader.release()
     video_writer.release()
 
-def showIference(model, sequence,skip,input_video_file_path,output_video_file_path,show):
+def showIference(model, sequence,skip,input_video_file_path,output_video_file_path,showInfo):
     # Perform Accident Detection on the Test Video.
-    predict_on_video(input_video_file_path, output_video_file_path, model,sequence,skip,show)
+    predict_on_video(input_video_file_path, output_video_file_path, model,sequence,skip,showInfo)
     return output_video_file_path
 
-def Fight_PipeLine(modelPath,inputPath,seq,skip,outputPath,show):
+def Fight_PipeLine(modelPath,inputPath,seq,skip,outputPath,showInfo):
     model = loadModel(modelPath)
     # Perform Accident Detection on the Test Video.
-    predict_on_video(inputPath, outputPath, model,seq,skip,show)
+    predict_on_video(inputPath, outputPath, model,seq,skip,showInfo)
     return outputPath
 
 # def predict_on_video(video_file_path, output_file_path, CLASSES_LIST, model, device,T=0.25, SEQUENCE_LENGTH=64):
