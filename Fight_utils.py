@@ -1,5 +1,4 @@
 # For Youtube Download.
-import os
 import io 
 from pytube import YouTube
 from IPython.display import HTML
@@ -29,7 +28,6 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 DATASET_DIR = '/content/Fight_Detection_From_Surveillance_Cameras-PyTorch_Project/dataset'
 CLASSES_LIST = ['fight','noFight']
 SEQUENCE_LENGTH = 16
-batch_size= 4
 
 # Define the transforms
 def transform_():
@@ -229,7 +227,7 @@ def loadModel(modelPath):
   model_ft = torchvision.models.video.r2plus1d_18(pretrained=True, progress=False)
   num_ftrs = model_ft.fc.in_features         #in_features
   model_ft.fc = torch.nn.Linear(num_ftrs, 2) #nn.Linear(in_features, out_features)
-  model_ft.load_state_dict(torch.load(PATH))
+  model_ft.load_state_dict(torch.load(PATH,map_location=torch.device(device)))
   model_ft.to(device)
   model_ft.eval()
   return model_ft
