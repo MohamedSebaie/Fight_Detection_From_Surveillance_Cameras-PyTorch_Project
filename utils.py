@@ -318,7 +318,7 @@ def FightInference(video_path,model,SEQUENCE_LENGTH=64):
   return "***********"
 
 
-def FightInference_Time(video_path,CLASSES_LIST, model,device,SEQUENCE_LENGTH=64):
+def FightInference_Time(video_path,model,SEQUENCE_LENGTH=64):
   start_time = time.time()
   clips = frames_extraction(video_path,SEQUENCE_LENGTH)
   class_=PredTopKClass(1,clips,model)
