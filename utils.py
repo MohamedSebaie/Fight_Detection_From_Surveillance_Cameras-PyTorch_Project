@@ -23,6 +23,14 @@ import albumentations as A
 from collections import deque
 from google.colab.patches import cv2_imshow
 
+
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+
+DATASET_DIR = '/content/Fight_Detection_From_Surveillance_Cameras-PyTorch_Project/dataset'
+CLASSES_LIST = ['fight','noFight']
+SEQUENCE_LENGTH = 16
+batch_size= 4
+
 # Define the transforms
 def transform_():
     transform = A.Compose(
@@ -216,7 +224,7 @@ def train_model(device,model, dataloaders, criterion, optimizer, num_epochs=25, 
     model.load_state_dict(best_model_wts)
     return model, val_acc_history
 
-def loadModel(modelPath,device=device):
+def loadModel(modelPath):
   PATH=modelPath
   model_ft = torchvision.models.video.r2plus1d_18(pretrained=True, progress=True)
   num_ftrs = model_ft.fc.in_features         #in_features
@@ -226,7 +234,7 @@ def loadModel(modelPath,device=device):
   model_ft.eval()
   return model_ft
 
-def PredTopKClass(k, clips, CLASSES_LIST, model, device):
+def PredTopKClass(k, clips, model):
   with torch.no_grad(): # we do not want to backprop any gradients
 
       input_frames = np.array(clips)
@@ -256,7 +264,7 @@ def PredTopKClass(k, clips, CLASSES_LIST, model, device):
   return Classes_nameTop_k[0]     #list(zip(Classes_nameTop_k,ProbTop_k))
 
 
-def PredTopKProb(k,clips,CLASSES_LIST,model,device):
+def PredTopKProb(k,clips,model):
   with torch.no_grad(): # we do not want to backprop any gradients
 
       input_frames = np.array(clips)
@@ -303,17 +311,17 @@ def show_video(file_name, width=640):
   </video>
   """.format(width, data_url))
 
-def FightInference(video_path,CLASSES_LIST, model,device,SEQUENCE_LENGTH=64):
+def FightInference(video_path,model,SEQUENCE_LENGTH=64):
   clips = frames_extraction(video_path,SEQUENCE_LENGTH)
-  print(PredTopKClass(1,clips, CLASSES_LIST, model, device))
-  print(PredTopKProb(2,clips, CLASSES_LIST, model, device))
+  print(PredTopKClass(1,clips, model))
+  print(PredTopKProb(2,clips, model))
   return "***********"
 
 
 def FightInference_Time(video_path,CLASSES_LIST, model,device,SEQUENCE_LENGTH=64):
   start_time = time.time()
   clips = frames_extraction(video_path,SEQUENCE_LENGTH)
-  class_=PredTopKClass(1,clips,CLASSES_LIST,model,device)
+  class_=PredTopKClass(1,clips,model)
   elapsed = time.time() - start_time
   print("time is:",elapsed)
   return class_
@@ -321,7 +329,7 @@ def FightInference_Time(video_path,CLASSES_LIST, model,device,SEQUENCE_LENGTH=64
 
 
 
-def predict_on_video(video_file_path, output_file_path, CLASSES_LIST, model, device, SEQUENCE_LENGTH,skip=2):
+def predict_on_video(video_file_path, output_file_path, model, SEQUENCE_LENGTH,skip=2):
     '''
     This function will perform action recognition on a video using the LRCN model.
     Args:
@@ -388,9 +396,9 @@ def predict_on_video(video_file_path, output_file_path, CLASSES_LIST, model, dev
     video_reader.release()
     video_writer.release()
 
-def showIference(CLASSES_LIST, model, device,sequence,skip,input_video_file_path,output_video_file_path):
+def showIference(model, sequence,skip,input_video_file_path,output_video_file_path):
     # Perform Accident Detection on the Test Video.
-    predict_on_video(input_video_file_path, output_video_file_path, CLASSES_LIST, model, device,sequence,skip)
+    predict_on_video(input_video_file_path, output_video_file_path, model,sequence,skip)
     return output_video_file_path
 
 
