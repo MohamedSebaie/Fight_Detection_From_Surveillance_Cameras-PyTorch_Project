@@ -401,11 +401,11 @@ def showIference(model, sequence,skip,input_video_file_path,output_video_file_pa
     predict_on_video(input_video_file_path, output_video_file_path, model,sequence,skip)
     return output_video_file_path
 
-def Fight_PipeLine(modelPath,input_video_file_path,sequence,skip,output_video_file_path):
+def Fight_PipeLine(modelPath,inputPath,seq,skip,outputPath):
     model = loadModel(modelPath)
     # Perform Accident Detection on the Test Video.
-    predict_on_video(input_video_file_path, output_video_file_path, model,sequence,skip)
-    return output_video_file_path
+    predict_on_video(inputPath, outputPath, model,seq,skip)
+    return outputPath
 
 # def predict_on_video(video_file_path, output_file_path, CLASSES_LIST, model, device,T=0.25, SEQUENCE_LENGTH=64):
 #     '''
