@@ -376,7 +376,7 @@ def predict_on_video(video_file_path, output_file_path, model, SEQUENCE_LENGTH,s
         
         # Check if the number of frames in the queue are equal to the fixed sequence length.
         if len(frames_queue) == SEQUENCE_LENGTH:
-          predicted_class_name= PredTopKClass(1,frames_queue, CLASSES_LIST, model, device)
+          predicted_class_name= PredTopKClass(1,frames_queue, model)
           print(predicted_class_name)
           frames_queue = deque(maxlen = SEQUENCE_LENGTH)
     
