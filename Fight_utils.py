@@ -224,7 +224,7 @@ def train_model(device,model, dataloaders, criterion, optimizer, num_epochs=25, 
 
 def loadModel(modelPath):
   PATH=modelPath
-  model_ft = torchvision.models.video.mc3(pretrained=True, progress=False)
+  model_ft = torchvision.models.video.mc3_18(pretrained=True, progress=False)
   num_ftrs = model_ft.fc.in_features         #in_features
   model_ft.fc = torch.nn.Linear(num_ftrs, 2) #nn.Linear(in_features, out_features)
   model_ft.load_state_dict(torch.load(PATH,map_location=torch.device(device)))
