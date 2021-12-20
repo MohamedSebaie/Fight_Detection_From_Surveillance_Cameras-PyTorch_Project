@@ -329,7 +329,7 @@ def FightInference_Time(video_path,model,SEQUENCE_LENGTH=64):
 
 
 
-def predict_on_video(video_file_path, output_file_path, model, SEQUENCE_LENGTH,skip=2):
+def predict_on_video(video_file_path, output_file_path, model, SEQUENCE_LENGTH,skip=2,show=False):
     '''
     This function will perform action recognition on a video using the LRCN model.
     Args:
@@ -377,8 +377,11 @@ def predict_on_video(video_file_path, output_file_path, model, SEQUENCE_LENGTH,s
         # Check if the number of frames in the queue are equal to the fixed sequence length.
         if len(frames_queue) == SEQUENCE_LENGTH:
           predicted_class_name= PredTopKClass(1,frames_queue, model)
-          print(predicted_class_name)
-          frames_queue = deque(maxlen = SEQUENCE_LENGTH)
+          if show:
+            print(predicted_class_name)
+            frames_queue = deque(maxlen = SEQUENCE_LENGTH)
+          else:
+            frames_queue = deque(maxlen = SEQUENCE_LENGTH)
     
         # Write predicted class name on top of the frame.
         if predicted_class_name=="fight":
@@ -391,20 +394,21 @@ def predict_on_video(video_file_path, output_file_path, model, SEQUENCE_LENGTH,s
 
         video_writer.write(frame)
         # time.sleep(2)
-    print(counter)  
+    if show:
+      print(counter)  
     # Release the VideoCapture and VideoWriter objects.
     video_reader.release()
     video_writer.release()
 
-def showIference(model, sequence,skip,input_video_file_path,output_video_file_path):
+def showIference(model, sequence,skip,input_video_file_path,output_video_file_path,show):
     # Perform Accident Detection on the Test Video.
-    predict_on_video(input_video_file_path, output_video_file_path, model,sequence,skip)
+    predict_on_video(input_video_file_path, output_video_file_path, model,sequence,skip,show)
     return output_video_file_path
 
-def Fight_PipeLine(modelPath,inputPath,seq,skip,outputPath):
+def Fight_PipeLine(modelPath,inputPath,seq,skip,outputPath,show):
     model = loadModel(modelPath)
     # Perform Accident Detection on the Test Video.
-    predict_on_video(inputPath, outputPath, model,seq,skip)
+    predict_on_video(inputPath, outputPath, model,seq,skip,show)
     return outputPath
 
 # def predict_on_video(video_file_path, output_file_path, CLASSES_LIST, model, device,T=0.25, SEQUENCE_LENGTH=64):
