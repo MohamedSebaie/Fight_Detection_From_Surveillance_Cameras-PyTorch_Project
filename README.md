@@ -13,19 +13,7 @@
 
  
  
-<h2>TO Test the Project</h2>
-<li>Clone the Repo then run the infer.py script. </li>
-For example, for mc3_18
-run:
-```bash
-python -m infer 
---modelPath=".\FDSC\models\model_16_m3_0.8888.pth" <br>
---inputPath=".\testVideo.mp4" <br>
---outputPath=".\outVideo.mp4" <br>
---sequenceLength=16 <br>
---skip=2 <br>
---showInfo=True<br>
-```
+
 
 <h1 color="green"><b>Abstract</b></h1>
 <p>Human action recognition can be seen as the automatic labeling of a video according to the actions occurring in it. It has
@@ -79,21 +67,10 @@ for the finetuned part.</p>
  <a href="https://pytorch.org/vision/stable/models.html">lhttps://pytorch.org/vision/stable/models.html</a></p>
 
 <h1 style="color: blue"><b>Confusion Matrix</b></h1>
-<img src="images/confusionMatrix.jpeg" alt="Simply Easy Learning" width="200" height="80">
-
-
-
-<h1 color="green"><b>Finetuned model Weights</b></h1>
-<p>mc3_18-->Link(model path)</p>
-
+<img src="images/confusionMatrix.jpeg" alt="Simply Easy Learning" >
 
 
 <h1 color="green"><b>Instructions</b></h1>
-
-
-
-
-
 
 
 
