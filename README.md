@@ -25,15 +25,10 @@
 
 ---
 
-<CENTER align="center">
-<H1 style="color:red">
-<h2>ITI</h2>
-<time datetime="2021-12-21">21 December 2021</time>
-</H1>
-</CENTER>
  
  
-TO Test the Project -----> Clone the Repo then run the infer.py script. 
+<h2>TO Test the Project</h2>
+<li>Clone the Repo then run the infer.py script. </li>
 For example, for mc3_18
 run:
 ```bash
