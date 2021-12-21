@@ -26,3 +26,26 @@ that aim to recognize the motions and actions of humans.
 All models use Kinetics-400 dataset for the pretrained part and Vision-based Fight Detection From Surveillance Cameras dataset
 for the finetuned part.</p>
 
+<table style="width:100%">
+  <tr>
+    <th>NO.</th>
+    <th>Name</th>
+    <th>E-mail</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Abdullah Abdelhakeem</td>
+    <td>abdullah.abdelhakeem25@gmail.com</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Ahmed Ibrahim</td>
+    <td>ahmedibeahim75@gmail.com</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Ahmed Gamal</td>
+    <td>agamalagamaleg@gmail.com</td>
+  </tr>
+  
+</table>
