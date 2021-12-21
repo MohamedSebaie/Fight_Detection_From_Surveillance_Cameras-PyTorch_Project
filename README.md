@@ -66,19 +66,33 @@ for the finetuned part.</p>
 <img src="images/confusionMatrix.jpeg" alt="Simply Easy Learning" >
 
 
-<h1 color="green"><b>Instructions</b></h1>
+<h1 color="green"><b>Instructions to Install our Fight Detection Package</b></h1>
+<ul>
+<li>
+ Install
+</li>
+</ul>
 
 
 
 <h1 color="green"><b>Inference</b></h1>
-<p>Run the infer.py script and pass the required arguments (model path, input & output paths, sequence length, skip frames) <br>
+<p>Run the infer.py script and pass the required arguments (model path, input & output paths, sequence length, skip frames, streaming) <br>
 python -m infer \ <br>
 --modelPath="/to/model_16_70_4_0.88.pth" \ <br>
 --inputPath="/to/input.mp4" \ <br>
 --outputPath="/to/output.mp4" \ <br>
+--streamingURL<br>
 --sequenceLength=16 \ <br>
 --skip=2 \ <br>
---showInfo=True</p> <br>
+--showInfo=True \<br>
+--streaming=False</p><br>
+
+
+
+
+
+
+
 
 
 <div style="float:left"><img src="https://scontent.fcai20-5.fna.fbcdn.net/v/t39.30808-6/269112292_1642135339476066_5881567363308810890_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=730e14&_nc_ohc=7NS4qYuWOaoAX8Hln7d&_nc_ht=scontent.fcai20-5.fna&oh=00_AT9eShqku1pSDFMpzapsRWl2X75L5WGtDaO4FvojNyONbA&oe=61C2841F" alt="Your Image"> </div>
