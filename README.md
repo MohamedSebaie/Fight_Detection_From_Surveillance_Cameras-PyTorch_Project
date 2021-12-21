@@ -84,14 +84,14 @@ for the finetuned part.</p>
 
 
 <h1 color="green"><b>Inference</b></h1>
-<p>Run the infer.py script and pass the required arguments (model path, input & output paths, sequence length, skip frames) 
-python -m infer \
---modelPath="/to/model_16_70_4_0.88.pth" \
---inputPath="/to/input.mp4" \
---outputPath="/to/output.mp4" \
---sequenceLength=16 \
---skip=2 \
---showInfo=True</p>
+<p>Run the infer.py script and pass the required arguments (model path, input & output paths, sequence length, skip frames) <br>
+python -m infer \ <br>
+--modelPath="/to/model_16_70_4_0.88.pth" \ <br>
+--inputPath="/to/input.mp4" \ <br>
+--outputPath="/to/output.mp4" \ <br>
+--sequenceLength=16 \ <br>
+--skip=2 \ <br>
+--showInfo=True</p> <br>
 
 
 
