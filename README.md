@@ -61,9 +61,37 @@ for the finetuned part.</p>
 
 
 <h1 color="green"><b>Pytorch Pretrained Models</b></h1>
-<p>All pretrained models can be found in this link.<p>
- <a href="https://pytorch.org/vision/stable/models.html">lhttps://pytorch.org/vision/stable/models.html</a>
+<p>All pretrained models can be found in this link.
+ <a href="https://pytorch.org/vision/stable/models.html">lhttps://pytorch.org/vision/stable/models.html</a></p>
 
+<h1 style="color: blue"><b>Confusion Matrix</b></h1>
+<img src="/html/images/test.png" alt="Simply Easy Learning" width="200" height="80">
+
+
+
+<h1 color="green"><b>Finetuned model Weights</b></h1>
+<p>mc3_18-->Link(model path)</p>
+
+
+
+<h1 color="green"><b>Instructions</b></h1>
+
+
+
+
+
+
+
+
+<h1 color="green"><b>Inference</b></h1>
+<p>Run the infer.py script and pass the required arguments (model path, input & output paths, sequence length, skip frames) 
+python -m infer \
+--modelPath="/to/model_16_70_4_0.88.pth" \
+--inputPath="/to/input.mp4" \
+--outputPath="/to/output.mp4" \
+--sequenceLength=16 \
+--skip=2 \
+--showInfo=True</p>
 
 
 
