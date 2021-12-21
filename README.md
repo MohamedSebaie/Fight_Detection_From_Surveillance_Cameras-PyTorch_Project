@@ -79,6 +79,24 @@ for the finetuned part.</p>
 <li>from fight_detection import Fight_utils</li>
 <li>from moviepy.editor import *</li><ul>
 
+ 
+```
+pip install aesthetic-ascii
+```
+
+2. Generate an aesthetic ASCII visual:
+
+```python
+from aesthetic_ascii import synthesize
+
+# initialize drive object (to generate visuals)
+drive = synthesize.Drive()
+# generate a ASCII visual (dark_mode optional)
+drive.generate(dark_mode=True)
+# save to png
+drive.to_png('aesthetic.png')
+```
+
 
 
 <h1 color="green"><b>Inference</b></h1>
