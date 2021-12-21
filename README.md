@@ -87,23 +87,30 @@ python -m infer \ <br>
 <p>Our Package can be found in this link.
  <a href="https://pypi.org/project/Feight-Detection-From-Surveillance-Cameras/">https://pypi.org/project/Feight-Detection-From-Surveillance-Cameras/</a></p>
 
+1. Install:
 
 ```python
 pip install Feight-Detection-From-Surveillance-Cameras
 pip install pafy youtube-dl moviepy
 pip install pytube
+```
+2. Download Our Finetuned Model Weights:
 
-# Download Finetuned Model Weights
+```python
 gdown --id 1MWDeLnpEaZDrKK-OjmzvYLxfjwp-GDcp
+```
+3. Detect Fight or Not by Pass your Local Video:
 
-# Import 
+```python
 from fight_detection import Fight_utils
 from moviepy.editor import *
 
-# Run the Below Function by Input your Test Video Path
+# Run the Below Function by Input your Test Video Path to get the outPut Video with Fight Detection or Not
 Fight_utils.Fight_PipeLine(modelPath,inputPath,seq,skip,outputPath,showInfo)
+```
+4. Show the Output Video with Detection:
 
-# Show the Output Test Video
+```python
 VideoFileClip(outputPath, audio=False, target_resolution=(300,None)).ipython_display()
 ```
 
