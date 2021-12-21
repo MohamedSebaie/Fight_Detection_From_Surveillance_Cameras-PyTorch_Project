@@ -70,15 +70,14 @@ for the finetuned part.</p>
 
 <h1 color="green"><b>Inference</b></h1>
 <p>Run the infer.py script and pass the required arguments (modelPath, streaming, inputPath, outputPath, sequenceLength, skip, showInfo) <br>
-```python -m infer \ <br>
---modelPath="/to/model_16_70_4_0.88.pth" \ <br>
+python -m infer \ <br>
+--modelPath="./FDSC/models/model_16_m3_0.8888.pth" \ <br>
 --streaming=False \ <br>
---inputPath="/to/input.mp4" \ <br>
---outputPath="/to/output.mp4" \ <br>
+--inputPath="./input.mp4" `Or Streaming Url in case of streaming = True` \ <br>
+--outputPath="./output.mp4" \ <br>
 --sequenceLength=16 \ <br>
 --skip=2 \ <br>
 --showInfo=True </p> <br>
-```
  
 
 
