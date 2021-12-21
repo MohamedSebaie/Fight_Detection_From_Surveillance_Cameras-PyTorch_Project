@@ -28,24 +28,33 @@ for the finetuned part.</p>
 
 <table style="width:100%">
   <tr>
-    <th>NO.</th>
-    <th>Name</th>
-    <th>E-mail</th>
+    <th>Model</th>
+    <th>Top-1 Accuracy</th>
+    <th>Batch Size (Videos)</th>
+    <th>Input Frames</th>
+    <th>Inference Time (Videos/sec)</th>
   </tr>
+  
   <tr>
-    <td>1</td>
-    <td>Abdullah Abdelhakeem</td>
-    <td>abdullah.abdelhakeem25@gmail.com</td>
+    <td>r2plus1d_18</td> <td>82.22%</td>  <td>4</td>  <td>16</td>  <td>11.3</td>
   </tr>
-  <tr>
-    <td>2</td>
-    <td>Ahmed Ibrahim</td>
-    <td>ahmedibeahim75@gmail.com</td>
+ 
+ <tr>
+    <td>r3d_18</td> <td>88.89%</td>  <td>4</td>  <td>16</td>  <td>11.3</td>
   </tr>
-  <tr>
-    <td>3</td>
-    <td>Ahmed Gamal</td>
-    <td>agamalagamaleg@gmail.com</td>
+ 
+ <tr>
+    <td>mc3_18</td> <td>91.11%</td>  <td>4</td>  <td>16</td>  <td>11.3</td>
+  </tr>
+ 
+ <tr>
+    <td>mc3_18</td> <td>91.11%</td>  <td>8</td>  <td>16</td>  <td>11.3</td>
+  </tr>
+ 
+ <tr>
+    <td>mc3_18</td> <td>83.72%</td>  <td>4</td>  <td>32</td>  <td>5.63</td>
   </tr>
   
 </table>
+
+
