@@ -23,6 +23,6 @@ long-short-term memory (LSTM)-based model, two-stream convolutional neural netwo
 Human action recognition is used in some surveillance systems and video processing tools.
 Our main problem is Fight Detection which we achieved to solve by using transfer learning on pretrained convolutional 3D models
 that aim to recognize the motions and actions of humans.
-All models use Kinetics-400 dataset for the pretrained part and Vision-based Fight Detection From Surveillance Cameras dataset</p>
-for the finetuned part.
+All models use Kinetics-400 dataset for the pretrained part and Vision-based Fight Detection From Surveillance Cameras dataset
+for the finetuned part.</p>
 
