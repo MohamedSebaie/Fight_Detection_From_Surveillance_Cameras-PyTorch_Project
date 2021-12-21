@@ -84,9 +84,7 @@ for the finetuned part.</p>
 pip install Feight-Detection-From-Surveillance-Cameras
 ```
 
-2. Generate an aesthetic ASCII visual:
 
-```python
 
 
 
