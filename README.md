@@ -26,6 +26,7 @@ that aim to recognize the motions and actions of humans.
 All models use Kinetics-400 dataset for the pretrained part and Vision-based Fight Detection From Surveillance Cameras dataset
 for the finetuned part.</p>
 
+<h1 color="green"><b>Results</b></h1>
 <table style="width:100%">
   <tr>
     <th>Model</th>
