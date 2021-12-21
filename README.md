@@ -33,12 +33,12 @@ For example, for mc3_18
 run:
 ```bash
 python -m infer 
---modelPath=".\FDSC\models\model_16_m3_0.8888.pth" 
---inputPath=".\testVideo.mp4" 
---outputPath=".\outVideo.mp4" 
---sequenceLength=16 
---skip=2 
---showInfo=True
+--modelPath=".\FDSC\models\model_16_m3_0.8888.pth" <br>
+--inputPath=".\testVideo.mp4" <br>
+--outputPath=".\outVideo.mp4" <br>
+--sequenceLength=16 <br>
+--skip=2 <br>
+--showInfo=True<br>
 ```
 
 <h1 color="green"><b>Abstract</b></h1>
