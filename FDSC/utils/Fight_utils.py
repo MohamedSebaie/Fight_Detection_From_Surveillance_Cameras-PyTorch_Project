@@ -13,6 +13,7 @@ import glob
 import torch
 import argparse
 import statistics
+import threading
 import torchvision
 import numpy as np
 import pandas as pd
@@ -20,13 +21,13 @@ import torch.nn as nn
 from moviepy.editor import *
 import albumentations as A
 from collections import deque
-
+#from google.colab.patches import cv2_imshow
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-
 DATASET_DIR = '/content/Fight_Detection_From_Surveillance_Cameras-PyTorch_Project/dataset'
 CLASSES_LIST = ['fight','noFight']
 SEQUENCE_LENGTH = 16
+predicted_class_name = ""
 
 # Define the transforms
 def transform_():
@@ -407,6 +408,53 @@ def Fight_PipeLine(modelPath,inputPath,seq,skip,outputPath,showInfo=False):
     # Perform Accident Detection on the Test Video.
     predict_on_video(inputPath, outputPath, model,seq,skip,showInfo)
     return outputPath
+
+def streaming_framesInference(frames, model):
+    clips = []
+    transform = transform_()
+    for frame in frames:
+        image = frame.copy()
+        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        frame = transform(image=frame)['image']
+
+        # Append the normalized frame into the frames list
+        clips.append(frame)
+    first = PredTopKClass(1, clips, model)
+    print(first)
+    print(PredTopKProb(2, clips, model))
+    return first
+
+
+def streaming_predict(frames, model):
+    prediction = streaming_framesInference(frames, model)
+    global predicted_class_name
+    predicted_class_name = prediction
+
+
+def start_streaming(model,streamingPath):
+    video = cv2.VideoCapture(streamingPath)
+    l = []
+    last_time = time.time() - 3
+    while True:
+        _, frame = video.read()
+        if last_time+2.5 < time.time():
+            l.append(frame)
+        if len(l) == 16:
+            last_time = time.time()
+            x = threading.Thread(target=streaming_predict, args=(l,model))
+            x.start()
+            l = []
+        if predicted_class_name == "fight":
+            cv2.putText(frame, predicted_class_name, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
+        else:
+            cv2.putText(frame, predicted_class_name, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+        cv2.imshow("RTSP", frame)
+        k = cv2.waitKey(1)
+        if k == ord('q'):
+            break
+
+    video.release()
+    cv2.destroyAllWindows()
 
 # def predict_on_video(video_file_path, output_file_path, CLASSES_LIST, model, device,T=0.25, SEQUENCE_LENGTH=64):
 #     '''
