@@ -1,13 +1,10 @@
 # Fight_Detection_From_Surveillance_Cameras-PyTorch_Project
  
  <div style="float:left"><img src="https://scontent.fcai20-5.fna.fbcdn.net/v/t39.30808-6/269112292_1642135339476066_5881567363308810890_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=730e14&_nc_ohc=7NS4qYuWOaoAX8Hln7d&_nc_ht=scontent.fcai20-5.fna&oh=00_AT9eShqku1pSDFMpzapsRWl2X75L5WGtDaO4FvojNyONbA&oe=61C2841F" alt="Your Image"> </div>
+
 <div style="float:right">
 <table style="width:100%">
-  <tr>
-    
-     <th>Team Member</th>
-    
-  </tr>
+  <tr><th>Team Members</th></tr>
  <tr><td>Mohamed Sebaie</td></tr>
   <tr><td>Abdullah Abdelhakeem</td></tr>
  <tr><td>Mohamed Mostafa</td></tr>
@@ -17,8 +14,6 @@
  <tr><td>Asmaa</td></tr>
  <tr><td>Eman</td></tr>
  <tr><td>Osama</td></tr>
-  
-  
 </table>
 
 </div>
