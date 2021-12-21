@@ -82,8 +82,17 @@ for the finetuned part.</p>
  
 ```
 pip install Feight-Detection-From-Surveillance-Cameras
+Instructions to Install our Fight Detection Package
+pip install Feight-Detection-From-Surveillance-Cameras
+pip install pafy youtube-dl moviepy
+pip install pytube
 
+   #Download Finetuned Model Weights
+gdown --id 1MWDeLnpEaZDrKK-OjmzvYLxfjwp-GDcp<
 
+from fight_detection import Fight_utils
+from moviepy.editor import *
+```
 
 
 
