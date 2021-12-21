@@ -19,13 +19,13 @@
 </div>
 
 
-<center>
+<center align="center">
 <h1><font size="+4">Fight Detection Project</font></h1>
 </center>
 
 ---
 
-<CENTER>
+<CENTER align="center">
 <H1 style="color:red">
 <h2>ITI</h2>
 <time datetime="2021-12-21">21 December 2021</time>
