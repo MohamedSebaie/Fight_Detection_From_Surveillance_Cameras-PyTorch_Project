@@ -4,9 +4,9 @@
 <div style="float:right">
 <table style="width:100%">
   <tr>
-    <th>NO.</th>
-    <th>Name</th>
-    <th>E-mail</th>
+    
+     <th>Team Member</th>
+    
   </tr>
  <tr><td>Mohamed Sebaie</td></tr>
   <tr><td>Abdullah Abdelhakeem</td></tr>
@@ -25,7 +25,7 @@
 
 
 <center>
-<h1><font size="+4">SFight_Detection</font></h1>
+<h1><font size="+4">Fight Detection Project</font></h1>
 </center>
 
 ---
