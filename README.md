@@ -66,20 +66,24 @@ for the finetuned part.</p>
 <img src="images/confusionMatrix.jpeg" alt="Simply Easy Learning" >
 
 
+
+
+<h1 color="green"><b>Inference</b></h1>
+<p>Run the infer.py script and pass the required arguments (model path, input & output paths, sequence length, skip frames, streaming) <br>
+python -m infer \ <br>
+--modelPath="/to/model_16_70_4_0.88.pth" \ <br>
+--inputPath="/to/input.mp4" \ <br>
+--outputPath="/to/output.mp4" \ <br>
+--streamingURL<br>
+--sequenceLength=16 \ <br>
+--skip=2 \ <br>
+--showInfo=True \<br>
+ --streaming=False</p><br>
+
+
+
+
 <h1 color="green"><b>Instructions to Install our Fight Detection Package</b></h1>
-<ul><li>pip install Feight-Detection-From-Surveillance-Cameras</li> 
-<li>Instructions to Install our Fight Detection Package</li>
-<li>pip install Feight-Detection-From-Surveillance-Cameras</li>
-<li>pip install pafy youtube-dl moviepy</li>
-<li>pip install pytube</li>
-
-   #Download Finetuned Model Weights
-<li>gdown --id 1MWDeLnpEaZDrKK-OjmzvYLxfjwp-GDcp</li>
-
-<li>from fight_detection import Fight_utils</li>
-<li>from moviepy.editor import *</li><ul>
-
- 
 ```
 pip install Feight-Detection-From-Surveillance-Cameras
 Instructions to Install our Fight Detection Package
@@ -93,21 +97,6 @@ gdown --id 1MWDeLnpEaZDrKK-OjmzvYLxfjwp-GDcp<
 from fight_detection import Fight_utils
 from moviepy.editor import *
 ```
-
-
-<br>
-
-<h1 color="green"><b>Inference</b></h1>
-<p>Run the infer.py script and pass the required arguments (model path, input & output paths, sequence length, skip frames, streaming) <br>
-python -m infer \ <br>
---modelPath="/to/model_16_70_4_0.88.pth" \ <br>
---inputPath="/to/input.mp4" \ <br>
---outputPath="/to/output.mp4" \ <br>
---streamingURL<br>
---sequenceLength=16 \ <br>
---skip=2 \ <br>
---showInfo=True \<br>
- --streaming=False</p><br>
 
 
 
