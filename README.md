@@ -82,7 +82,7 @@ for the finetuned part.</p>
  
 ```
 pip install Feight-Detection-From-Surveillance-Cameras
-```
+
 
 
 
