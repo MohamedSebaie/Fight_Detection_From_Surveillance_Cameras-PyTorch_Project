@@ -68,9 +68,10 @@ for the finetuned part.</p>
 
 <h1 color="green"><b>Instructions to Install our Fight Detection Package</b></h1>
 <ul>
-<li>
- Install
+<ol>
+ Install<li>!pip install Feight-Detection-From-Surveillance-Cameras
 </li>
+</ol>
 </ul>
 
 
