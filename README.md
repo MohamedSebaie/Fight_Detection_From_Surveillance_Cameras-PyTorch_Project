@@ -79,7 +79,7 @@ Instructions to Install our Fight Detection Package
 
 from fight_detection import Fight_utils
 from moviepy.editor import *
-```
+
 
 
 <h1 color="green"><b>Inference</b></h1>
