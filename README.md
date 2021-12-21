@@ -13,7 +13,7 @@ python -m infer
 --showInfo=True
 ```
 
-<h1 style="color="rblue"><b>Abstract</b></h1>
+<h1 color="green"><b>Abstract</b></h1>
 <p>Human action recognition can be seen as the automatic labeling of a video according to the actions occurring in it. It has
 become one of the most challenging and attractive problems in the pattern recognition and video classification fields.
 The problem itself is difficult to solve by traditional video processing methods because of several challenges such as
