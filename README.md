@@ -95,7 +95,7 @@ from moviepy.editor import *
 ```
 
 
-
+<br>
 
 <h1 color="green"><b>Inference</b></h1>
 <p>Run the infer.py script and pass the required arguments (model path, input & output paths, sequence length, skip frames, streaming) <br>
@@ -107,7 +107,7 @@ python -m infer \ <br>
 --sequenceLength=16 \ <br>
 --skip=2 \ <br>
 --showInfo=True \<br>
---streaming=False</p><br>
+ --streaming=False</p><br>
 
 
 
