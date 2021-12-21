@@ -59,3 +59,11 @@ for the finetuned part.</p>
 </table>
 
 
+
+<h1 color="green"><b>Pytorch Pretrained Models</b></h1>
+<p>All pretrained models can be found in this link.<p>
+ <a href="https://pytorch.org/vision/stable/models.html">lhttps://pytorch.org/vision/stable/models.html</a>
+
+
+
+
