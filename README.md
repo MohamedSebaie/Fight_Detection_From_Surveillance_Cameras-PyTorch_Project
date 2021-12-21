@@ -1,5 +1,48 @@
 # Fight_Detection_From_Surveillance_Cameras-PyTorch_Project
  
+ <div style="float:left"><img src="https://scontent.fcai20-5.fna.fbcdn.net/v/t39.30808-6/269112292_1642135339476066_5881567363308810890_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=730e14&_nc_ohc=7NS4qYuWOaoAX8Hln7d&_nc_ht=scontent.fcai20-5.fna&oh=00_AT9eShqku1pSDFMpzapsRWl2X75L5WGtDaO4FvojNyONbA&oe=61C2841F" alt="Your Image"> </div>
+<div style="float:right">
+<table style="width:100%">
+  <tr>
+    <th>NO.</th>
+    <th>Name</th>
+    <th>E-mail</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Abdullah Abdelhakeem</td>
+    <td>abdullah.abdelhakeem25@gmail.com</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Ahmed Ibrahim</td>
+    <td>ahmedibeahim75@gmail.com</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Ahmed Gamal</td>
+    <td>agamalagamaleg@gmail.com</td>
+  </tr>
+  
+</table>
+
+</div>
+
+
+<center>
+<h1><font size="+4">Single Image Super Resolution (SRGAN)</font></h1>
+</center>
+
+---
+
+<CENTER>
+<H1 style="color:red">
+<h2>ITI - Brightskies</h2>
+<time datetime="2021-12-18">21 December 2021</time>
+</H1>
+</CENTER>
+ 
+ 
 TO Test the Project -----> Clone the Repo then run the infer.py script. 
 For example, for mc3_18
 run:
