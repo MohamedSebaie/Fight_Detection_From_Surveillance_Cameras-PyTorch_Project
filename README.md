@@ -8,21 +8,16 @@
     <th>Name</th>
     <th>E-mail</th>
   </tr>
-  <tr>
-    <td>1</td>
-    <td>Abdullah Abdelhakeem</td>
-    <td>abdullah.abdelhakeem25@gmail.com</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>Ahmed Ibrahim</td>
-    <td>ahmedibeahim75@gmail.com</td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td>Ahmed Gamal</td>
-    <td>agamalagamaleg@gmail.com</td>
-  </tr>
+ <tr><td>Mohamed Sebaie</td></tr>
+  <tr><td>Abdullah Abdelhakeem</td></tr>
+ <tr><td>Mohamed Mostafa</td></tr>
+ <tr><td>Elshimaa</td></tr>
+ <tr><td>Atef</td></tr>
+ <tr><td>Lamiaa</td></tr>
+ <tr><td>Asmaa</td></tr>
+ <tr><td>Eman</td></tr>
+ <tr><td>Osama</td></tr>
+  
   
 </table>
 
@@ -30,15 +25,15 @@
 
 
 <center>
-<h1><font size="+4">Single Image Super Resolution (SRGAN)</font></h1>
+<h1><font size="+4">SFight_Detection</font></h1>
 </center>
 
 ---
 
 <CENTER>
 <H1 style="color:red">
-<h2>ITI - Brightskies</h2>
-<time datetime="2021-12-18">21 December 2021</time>
+<h2>ITI</h2>
+<time datetime="2021-12-21">21 December 2021</time>
 </H1>
 </CENTER>
  
