@@ -67,7 +67,9 @@ for the finetuned part.</p>
 
 
 <h1 color="green"><b>Instructions to Install our Fight Detection Package</b></h1>
-```python
+```
+pip install aesthetic-ascii
+```
 pip install Feight-Detection-From-Surveillance-Cameras 
 Instructions to Install our Fight Detection Package
 !pip install Feight-Detection-From-Surveillance-Cameras
