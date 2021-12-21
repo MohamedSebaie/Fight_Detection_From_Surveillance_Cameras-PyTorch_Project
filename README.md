@@ -70,6 +70,7 @@ for the finetuned part.</p>
 
 <h1 color="green"><b>Inference</b></h1>
 <p>Run the infer.py script and pass the required arguments (modelPath, streaming, inputPath, outputPath, sequenceLength, skip, showInfo) <br>
+ ```python
 python -m infer \ <br>
 --modelPath="./FDSC/models/model_16_m3_0.8888.pth" \ <br>
 --streaming=False \ <br>
@@ -78,7 +79,7 @@ python -m infer \ <br>
 --sequenceLength=16 \ <br>
 --skip=2 \ <br>
 --showInfo=True </p> <br>
- 
+ ```
 
 
 
