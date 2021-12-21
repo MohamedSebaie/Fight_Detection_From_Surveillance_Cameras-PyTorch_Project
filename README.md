@@ -2,21 +2,7 @@
  
  <div style="float:left"><img src="https://scontent.fcai20-5.fna.fbcdn.net/v/t39.30808-6/269112292_1642135339476066_5881567363308810890_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=730e14&_nc_ohc=7NS4qYuWOaoAX8Hln7d&_nc_ht=scontent.fcai20-5.fna&oh=00_AT9eShqku1pSDFMpzapsRWl2X75L5WGtDaO4FvojNyONbA&oe=61C2841F" alt="Your Image"> </div>
 
-<div align="left" style="float:right">
-<table style="width:100%">
-  <tr><th>Team Members</th></tr>
- <tr><td>Mohamed Sebaie</td></tr>
-  <tr><td>Abdullah Abdelhakeem</td></tr>
- <tr><td>Mohamed Mostafa</td></tr>
- <tr><td>Elshimaa</td></tr>
- <tr><td>Atef</td></tr>
- <tr><td>Lamiaa</td></tr>
- <tr><td>Asmaa</td></tr>
- <tr><td>Eman</td></tr>
- <tr><td>Osama</td></tr>
-</table>
 
-</div>
 
 
 <center align="center">
@@ -93,7 +79,7 @@ for the finetuned part.</p>
  <a href="https://pytorch.org/vision/stable/models.html">lhttps://pytorch.org/vision/stable/models.html</a></p>
 
 <h1 style="color: blue"><b>Confusion Matrix</b></h1>
-<img src="/html/images/test.png" alt="Simply Easy Learning" width="200" height="80">
+<img src="images/confusionMatrix.jpeg" alt="Simply Easy Learning" width="200" height="80">
 
 
 
