@@ -74,8 +74,8 @@ for the finetuned part.</p>
 python -m infer \ <br>
 --modelPath="./FDSC/models/model_16_m3_0.8888.pth" \ <br>
 --streaming=False \ <br>
---inputPath="./input.mp4" `Or Streaming Url in case of streaming = True` \ <br>
---outputPath="./output.mp4" \ <br>
+--inputPath="./inputTestVideo.mp4" `Or Streaming Url in case of streaming = True` \ <br>
+--outputPath="./outputVideo.mp4" \ <br>
 --sequenceLength=16 \ <br>
 --skip=2 \ <br>
 --showInfo=True </p> <br>
