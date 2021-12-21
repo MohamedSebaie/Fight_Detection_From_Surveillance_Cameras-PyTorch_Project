@@ -90,11 +90,18 @@ pip install Feight-Detection-From-Surveillance-Cameras
 pip install pafy youtube-dl moviepy
 pip install pytube
 
-   #Download Finetuned Model Weights
-gdown --id 1MWDeLnpEaZDrKK-OjmzvYLxfjwp-GDcp<
+# Download Finetuned Model Weights
+gdown --id 1MWDeLnpEaZDrKK-OjmzvYLxfjwp-GDcp
 
+# Import 
 from fight_detection import Fight_utils
 from moviepy.editor import *
+
+# Run the Below Function by Input your Test Video Path
+Fight_utils.Fight_PipeLine(modelPath,inputPath,seq,skip,outputPath,showInfo)
+
+# Show the Output Test Video
+VideoFileClip(outputPath, audio=False, target_resolution=(300,None)).ipython_display()
 ```
 
 
