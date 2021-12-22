@@ -106,7 +106,7 @@ gdown.download(url, output, quiet=False)
 ```python
 from fight_detection import Fight_utils
 # Run the Below Function by Input your Test Video Path to get the outPut Video with Fight Detection or Not
-Fight_utils.Fight_PipeLine(inputPath,seq,skip,outputPath,showInfo)
+Fight_utils.fightDetection(inputPath,seq,skip,outputPath,showInfo)
 ```
 4. Show the Output Video with Detection:
 
