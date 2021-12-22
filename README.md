@@ -114,9 +114,11 @@ Fight_utils.fightDetection(inputPath,seq,skip,outputPath,showInfo)
 from moviepy.editor import *
 VideoFileClip(outputPath, audio=False, target_resolution=(300,None)).ipython_display()
 ```
+5- Detect the Fight on Streaming:
 
-
-
+```python
+Fight_utils.start_streaming(streamingURL)
+```
 
 
 
