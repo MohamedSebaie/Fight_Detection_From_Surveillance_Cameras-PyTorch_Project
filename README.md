@@ -59,7 +59,7 @@ for the finetuned part.</p>
 
 <h1 color="green"><b>Pytorch Pretrained Models</b></h1>
 <p>All pretrained models can be found in this link.
- <a href="https://pytorch.org/vision/stable/models.html">lhttps://pytorch.org/vision/stable/models.html</a></p>
+ <a href="https://pytorch.org/vision/stable/models.html">https://pytorch.org/vision/stable/models.html</a></p>
 
 <h1 style="color: blue"><b>Confusion Matrix</b></h1>
 <img src="images/confusionMatrix.jpeg" alt="Simply Easy Learning" >
