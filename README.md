@@ -84,7 +84,7 @@ python -m infer \ <br>
 
 <h1 color="green"><b>Instructions to Install our Fight Detection Package</b></h1>
 <p>Our Package can be found in this link.
- <a href="https://pypi.org/project/Fight-Detection/0.0.3/">https://pypi.org/project/Feight-Detection-From-Surveillance-Cameras/</a></p>
+ <a href="https://pypi.org/project/Fight-Detection/0.0.3/">hhttps://pypi.org/project/Fight-Detection/0.0.3//</a></p>
 
 1. Install:
 
