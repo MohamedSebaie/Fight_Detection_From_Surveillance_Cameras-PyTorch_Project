@@ -1,5 +1,4 @@
 
- 
 
 <center align="center">
 <h1 align="center"><font size="+4">Fight Detection Project</font></h1>
