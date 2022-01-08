@@ -63,7 +63,7 @@ for the finetuned part.</p>
  <a href="https://pytorch.org/vision/stable/models.html">https://pytorch.org/vision/stable/models.html</a></p>
 
 <h1 style="color: blue"><b>Confusion Matrix</b></h1>
-<img src="images/confusionMatrix.jpeg" alt="Simply Easy Learning" >
+<img src="images/confusionMatrix.png" alt="Simply Easy Learning" >
 
 
 
