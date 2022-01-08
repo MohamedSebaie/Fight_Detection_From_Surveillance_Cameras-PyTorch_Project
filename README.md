@@ -30,27 +30,28 @@ for the finetuned part.</p>
     <th>Top-1 Accuracy</th>
     <th>Batch Size (Videos)</th>
     <th>Input Frames</th>
-    <th>Inference Time (Videos/sec)</th>
+    <th>Recall (Fight)</th>
+    <th>Inference Rate (Videos/sec)</th>
   </tr>
   
   <tr>
-    <td>r2plus1d_18</td> <td>82.22%</td>  <td>4</td>  <td>16</td>  <td>11.3</td>
+    <td>r2plus1d_18</td> <td>77.5%</td>  <td>4</td>  <td>16</td>  <td>0.75</td>  <td>10</td>
   </tr>
  
  <tr>
-    <td>r3d_18</td> <td>88.89%</td>  <td>4</td>  <td>16</td>  <td>11.3</td>
+    <td>r3d_18</td> <td>82.5%</td>  <td>4</td>  <td>16</td>  <td>0.85</td>  <td>10</td>
   </tr>
  
  <tr>
-    <td>mc3_18</td> <td>91.11%</td>  <td>4</td>  <td>16</td>  <td>11.3</td>
+    <td>mc3_18</td> <td>90%</td>  <td>4</td>  <td>16</td>  <td>0.80</td>  <td>10</td>
   </tr>
  
  <tr>
-    <td>mc3_18</td> <td>91.11%</td>  <td>8</td>  <td>16</td>  <td>11.3</td>
+    <td>mc3_18</td> <td>92.5%</td>  <td>8</td>  <td>16</td>  <td>0.90</td>  <td>10</td>
   </tr>
  
  <tr>
-    <td>mc3_18</td> <td>83.72%</td>  <td>4</td>  <td>32</td>  <td>5.63</td>
+    <td>mc3_18</td> <td>85%</td>  <td>4</td>  <td>32</td>  <td>0.90</td>  <td>5.7</td>
   </tr>
   
 </table>
