@@ -9,6 +9,10 @@
  
  
 
+https://user-images.githubusercontent.com/45875057/151003243-6a8598f2-7a58-4bd9-a7c1-ae731ff92eb1.mp4
+
+
+
 
 <h1 color="green"><b>Abstract</b></h1>
 <p>Vision-based activity recognition is one of the most challenging research topics of computer vision and pattern recognition. 
