@@ -22,7 +22,6 @@ https://user-images.githubusercontent.com/45875057/151727354-c6cb1c80-8da3-4c49-
 
 
 
-https://user-images.githubusercontent.com/45875057/151727428-8058e331-324e-4496-9165-ef14678aaebf.mp4
 
 
 
