@@ -1,0 +1,11 @@
+LICENCE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+Fight_Detection.egg-info/PKG-INFO
+Fight_Detection.egg-info/SOURCES.txt
+Fight_Detection.egg-info/dependency_links.txt
+Fight_Detection.egg-info/top_level.txt
+fight_detection/Fight_utils.py
+fight_detection/__init__.py
